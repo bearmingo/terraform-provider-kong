@@ -122,6 +122,7 @@ func resourceKongRoute() *schema.Resource {
 				ForceNew: false,
 				Default:  426,
 			},
+			/*
 			"request_buffering": {
 				Type:     schema.TypeBool,
 				Optional: true,
@@ -133,7 +134,7 @@ func resourceKongRoute() *schema.Resource {
 				Optional: true,
 				ForceNew: false,
 				Default:  true,
-			},
+			},*/
 			"tags": {
 				Type:     schema.TypeList,
 				Optional: true,
@@ -304,6 +305,7 @@ func resourceKongRouteRead(ctx context.Context, d *schema.ResourceData, meta int
 			}
 		}
 
+		/*
 		if route.RequestBuffering != nil {
 			err := d.Set("request_buffering", route.RequestBuffering)
 			if err != nil {
@@ -316,7 +318,7 @@ func resourceKongRouteRead(ctx context.Context, d *schema.ResourceData, meta int
 			if err != nil {
 				return diag.FromErr(err)
 			}
-		}
+		}*/
 
 		err = d.Set("tags", route.Tags)
 		if err != nil {
